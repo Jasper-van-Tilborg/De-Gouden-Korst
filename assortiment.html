@@ -2,8 +2,12 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Assortiment | De Gouden Korst</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&family=Lora:wght@400;500&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js/dist/umd/supabase.min.js"></script>
   <script defer src="assortiment.js"></script>
 </head>
@@ -15,7 +19,6 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="index.html#over-ons">Over Ons</a></li>
         <li><a href="assortiment.html">Assortiment</a></li>
-        <li><a href="index.html#nieuws">Nieuws</a></li>
         <li><a href="index.html#contact">Contact</a></li>
       </ul>
     </nav>
@@ -24,6 +27,13 @@
     <section class="assortiment">
       <div class="container">
         <h1>Ons Assortiment</h1>
+        <div class="categorie-filters">
+          <button class="categorie-btn active" data-categorie="all">Alles</button>
+          <button class="categorie-btn" data-categorie="1">Volkoren</button>
+          <button class="categorie-btn" data-categorie="2">Wit</button>
+          <button class="categorie-btn" data-categorie="3">Meergranen</button>
+          <button class="categorie-btn" data-categorie="4">Speciaal</button>
+        </div>
         <div id="assortiment" class="product-grid"></div>
       </div>
     </section>

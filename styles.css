@@ -338,3 +338,109 @@ footer {
   margin-right: auto;
   box-shadow: 0 2px 8px rgba(75, 59, 43, 0.08);
 }
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+  align-items: stretch;
+}
+
+.product-card {
+  background: var(--creme);
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(75, 59, 43, 0.1);
+  padding: 2.2rem 2rem 1.7rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: box-shadow 0.3s, transform 0.3s, border 0.3s;
+  border: 1.5px solid var(--warm-beige);
+  min-height: 380px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  box-shadow: 0 12px 32px rgba(75, 59, 43, 0.18);
+  transform: translateY(-6px) scale(1.025);
+  border: 1.5px solid var(--goud);
+}
+
+.product-card h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.45rem;
+  color: var(--goud);
+  margin-bottom: 1.1rem;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+
+.product-card p {
+  font-family: "Lora", serif;
+  color: var(--donkerbruin);
+  font-size: 1.05rem;
+  margin-bottom: 0.7rem;
+  line-height: 1.7;
+}
+
+.product-card p strong {
+  color: var(--olijfgroen);
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.product-card p.prijs {
+  color: var(--goud);
+  font-size: 1.12rem;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  margin-top: 0.8rem;
+  margin-bottom: 0;
+}
+
+.product-card p:last-child:not(.prijs) {
+  margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .product-card {
+    padding: 1.2rem 0.8rem;
+  }
+}
+
+.categorie-filters {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 1.8rem;
+  flex-wrap: wrap;
+}
+
+.categorie-btn {
+  background: var(--creme);
+  color: var(--donkerbruin);
+  border: 1.5px solid var(--warm-beige);
+  border-radius: 8px;
+  padding: 0.6rem 1.4rem;
+  font-family: "Lora", serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(75, 59, 43, 0.06);
+}
+
+.categorie-btn.active,
+.categorie-btn:hover {
+  background: var(--goud);
+  color: var(--creme);
+  border: 1.5px solid var(--goud);
+  box-shadow: 0 4px 16px rgba(197, 157, 95, 0.1);
+}
