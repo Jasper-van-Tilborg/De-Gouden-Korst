@@ -252,6 +252,9 @@ nav a:hover {
   line-height: 1.6;
   font-family: "Lora", serif;
   flex: 1 1 auto;
+  min-height: 96px;
+  display: flex;
+  align-items: flex-end;
 }
 
 .lees-meer {
