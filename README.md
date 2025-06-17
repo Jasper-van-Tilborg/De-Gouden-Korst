@@ -4,7 +4,7 @@ Welkom bij **De Gouden Korst**, een overzichtelijke en aantrekkelijke websit
 
 ## 🌐 Live demo  
 Bekijk de website live:  
-`https://[jouw-deployment-url].vercel.app` _(vervang door je eigen link)_
+`[https://[jouw-deployment-url].vercel.app](https://de-gouden-korst-2bt6n7qw0-jasper-van-tilborgs-projects.vercel.app)` _(vervang door je eigen link)_
 
 ## Inhoud van de repository
 
