@@ -14,6 +14,9 @@
   <header>
     <nav>
       <div class="logo">De Gouden Korst</div>
+      <div class="mobile-menu-icon">
+        <i class="fas fa-bars"></i>
+      </div>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="index.html#over-ons">Over Ons</a></li>
@@ -135,5 +138,31 @@
       </div>
     </section>
   </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Mobiel menu functionaliteit
+      const menuIcon = document.querySelector(".mobile-menu-icon");
+      const navMenu = document.querySelector("nav ul");
+
+      menuIcon.addEventListener("click", () => {
+        navMenu.classList.toggle("show");
+      });
+
+      // Sluit menu bij klikken op een link
+      document.querySelectorAll("nav ul li a").forEach(link => {
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("show");
+        });
+      });
+
+      // Sluit menu bij scrollen
+      window.addEventListener("scroll", () => {
+        if (navMenu.classList.contains("show")) {
+          navMenu.classList.remove("show");
+        }
+      });
+    });
+  </script>
 </body>
 </html> 

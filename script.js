@@ -61,3 +61,43 @@ document
     element.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
     observer.observe(element);
   });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const mobileMenuIcon = document.querySelector(".mobile-menu-icon");
+  const navMenu = document.querySelector("nav ul");
+
+  // Toggle menu wanneer op het hamburger icoon wordt geklikt
+  mobileMenuIcon.addEventListener("click", function () {
+    navMenu.classList.toggle("show");
+    const menuIcon = this.querySelector("i");
+    menuIcon.classList.toggle("fa-bars");
+    menuIcon.classList.toggle("fa-times");
+  });
+
+  // Sluit menu wanneer op een link wordt geklikt
+  document.querySelectorAll("nav ul li a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("show");
+      const menuIcon = mobileMenuIcon.querySelector("i");
+      menuIcon.classList.add("fa-bars");
+      menuIcon.classList.remove("fa-times");
+    });
+  });
+
+  // Sluit menu wanneer er buiten het menu wordt geklikt
+  document.addEventListener("click", function (event) {
+    const isClickInsideMenu = navMenu.contains(event.target);
+    const isClickOnMenuIcon = mobileMenuIcon.contains(event.target);
+
+    if (
+      !isClickInsideMenu &&
+      !isClickOnMenuIcon &&
+      navMenu.classList.contains("show")
+    ) {
+      navMenu.classList.remove("show");
+      const menuIcon = mobileMenuIcon.querySelector("i");
+      menuIcon.classList.add("fa-bars");
+      menuIcon.classList.remove("fa-times");
+    }
+  });
+});

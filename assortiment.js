@@ -109,6 +109,8 @@ function filterOpCategorie(categorieId) {
 
 document.addEventListener("DOMContentLoaded", () => {
   laadAssortiment();
+
+  // Categorie filter knoppen
   document.querySelectorAll(".categorie-btn").forEach((btn) => {
     btn.addEventListener("click", function () {
       document
@@ -117,5 +119,27 @@ document.addEventListener("DOMContentLoaded", () => {
       this.classList.add("active");
       filterOpCategorie(this.getAttribute("data-categorie"));
     });
+  });
+
+  // Mobiel menu functionaliteit
+  const menuIcon = document.querySelector(".mobile-menu-icon");
+  const navMenu = document.querySelector("nav ul");
+
+  menuIcon.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+  });
+
+  // Sluit menu bij klikken op een link
+  document.querySelectorAll("nav ul li a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("show");
+    });
+  });
+
+  // Sluit menu bij scrollen
+  window.addEventListener("scroll", () => {
+    if (navMenu.classList.contains("show")) {
+      navMenu.classList.remove("show");
+    }
   });
 });
