@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | De Gouden Korst</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">De Gouden Korst</div>
+      <div class="mobile-menu-icon">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#over-ons">Over Ons</a></li>
+        <li><a href="assortiment.html">Assortiment</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contact-page">
+    <section class="contact-hero">
+      <div class="container">
+        <h1>Contact</h1>
+        <p class="intro-text">Heb je een vraag, wil je een bestelling plaatsen of gewoon even hallo zeggen?<br>We horen graag van je!</p>
+      </div>
+    </section>
+
+    <section class="contact-content">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Contactgegevens -->
+          <div class="contact-info">
+            <div class="info-card">
+              <h2>Bezoek ons</h2>
+              <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <strong>De Gouden Korst</strong><br>
+                  Kerkstraat 12<br>
+                  1234 AB Ambachtendam
+                </div>
+              </div>
+              
+              <div class="info-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                  <strong>Telefoon</strong><br>
+                  031-1234567
+                </div>
+              </div>
+
+              <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <strong>E-mail</strong><br>
+                  info@degoudenkorst.nl
+                </div>
+              </div>
+            </div>
+
+            <div class="info-card openingstijden">
+              <h2>Openingstijden</h2>
+              <table>
+                <tr>
+                  <td>Maandag - Vrijdag</td>
+                  <td>07:00 - 18:00</td>
+                </tr>
+                <tr>
+                  <td>Zaterdag</td>
+                  <td>07:00 - 17:00</td>
+                </tr>
+                <tr>
+                  <td>Zondag</td>
+                  <td>Gesloten</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+
+          <!-- Contactformulier -->
+          <div class="contact-form-container">
+            <div class="form-card">
+              <h2>Stuur ons een bericht</h2>
+              <form class="contact-form">
+                <div class="form-group">
+                  <label for="naam">Naam</label>
+                  <input type="text" id="naam" name="naam" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="email">E-mailadres</label>
+                  <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="onderwerp">Onderwerp</label>
+                  <input type="text" id="onderwerp" name="onderwerp">
+                </div>
+
+                <div class="form-group">
+                  <label for="bericht">Bericht</label>
+                  <textarea id="bericht" name="bericht" rows="5" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Verzenden</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Media -->
+        <div class="social-media">
+          <h2>Volg ons voor vers nieuws en acties</h2>
+          <div class="social-links">
+            <a href="#" class="social-link instagram">
+              <i class="fab fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+            <a href="#" class="social-link facebook">
+              <i class="fab fa-facebook-f"></i>
+              <span>Facebook</span>
+            </a>
+            <a href="#" class="social-link pinterest">
+              <i class="fab fa-pinterest-p"></i>
+              <span>Pinterest</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Mobiel menu functionaliteit
+      const menuIcon = document.querySelector(".mobile-menu-icon");
+      const navMenu = document.querySelector("nav ul");
+
+      menuIcon.addEventListener("click", () => {
+        navMenu.classList.toggle("show");
+      });
+
+      // Sluit menu bij klikken op een link
+      document.querySelectorAll("nav ul li a").forEach(link => {
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("show");
+        });
+      });
+
+      // Sluit menu bij scrollen
+      window.addEventListener("scroll", () => {
+        if (navMenu.classList.contains("show")) {
+          navMenu.classList.remove("show");
+        }
+      });
+    });
+  </script>
+</body>
+</html> 
