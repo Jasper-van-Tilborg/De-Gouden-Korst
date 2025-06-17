@@ -22,35 +22,88 @@ async function laadAssortiment() {
   }
 
   alleProducten = data;
-  renderProducten(data);
+  // Sorteer de producten op naam
+  const gesorteerdeProducten = [...data].sort((a, b) =>
+    a.naam.localeCompare(b.naam, "nl")
+  );
+  renderProducten(gesorteerdeProducten);
 }
 
 function renderProducten(producten) {
   const container = document.getElementById("assortiment");
   container.innerHTML = producten
-    .map(
-      (brood) => `
+    .map((brood) => {
+      // Bepaal de juiste afbeelding op basis van de productnaam
+      let imgFileName = "";
+      const naam = brood.naam.toLowerCase();
+
+      if (naam.includes("lijnzaad")) imgFileName = "lijnzaadbrood.jpeg";
+      else if (naam.includes("meergranen")) imgFileName = "Meergranen.jpeg";
+      else if (naam.includes("suikerbrood")) imgFileName = "Suikerbrood.jpg";
+      else if (naam.includes("melkbrood")) imgFileName = "Wit melkbrood.jpg";
+      else if (naam.includes("wit vloerbrood"))
+        imgFileName = "Wit vloerbrood.jpeg";
+      else if (naam.includes("casino")) imgFileName = "Casino wit.jpeg";
+      else if (naam.includes("tijgerbrood") && naam.includes("wit"))
+        imgFileName = "Wit tijgerbrood.jpeg";
+      else if (naam.includes("spelt")) imgFileName = "Spelt volkoren.jpeg";
+      else if (naam.includes("pompoen"))
+        imgFileName = "Pompoenpit volkoren.jpg";
+      else if (naam.includes("zonne")) imgFileName = "Zonnepit volkoren.jpg";
+      else if (naam.includes("volkoren vloerbrood"))
+        imgFileName = "Volkoren vloerbrood.jpeg";
+      else if (naam.includes("tijger") && naam.includes("volkoren"))
+        imgFileName = "tijgervolkoren.jpeg";
+      // Nieuwe broodsoorten
+      else if (naam.includes("olijven")) imgFileName = "Olijvenbrood.jpg";
+      else if (naam.includes("noten")) imgFileName = "notenbrood.jpg";
+      else if (naam.includes("rozijn")) imgFileName = "rozijnbrood.jpg";
+      else if (naam.includes("rogge")) imgFileName = "roggebrood.jpg";
+      else if (naam.includes("turks")) imgFileName = "Turksbrood.jpg";
+      else if (
+        naam.includes("boerenmeerzaden") ||
+        naam.includes("boeren meerzaden")
+      )
+        imgFileName = "boerenmeerzaden.png";
+      else if (naam.includes("focaccia")) imgFileName = "Focaccia.jpg";
+
+      const imgPath = imgFileName ? `images/assortiment/${imgFileName}` : "";
+
+      return `
     <div class="product-card">
+      ${
+        imgPath
+          ? `<div class="product-image"><img src="${imgPath}" alt="${brood.naam}"></div>`
+          : ""
+      }
       <h3>${brood.naam || ""}</h3>
-      <p>${brood.beschrijving || ""}</p>
-      <p><strong>Ingrediënten:</strong> ${brood.ingrediënten || "-"}</p>
-      <p><strong>Allergenen:</strong> ${brood.allergenen || "-"}</p>
+      <div class="product-info">
+        <p>${brood.beschrijving || ""}</p>
+        <p><strong>Ingrediënten:</strong> ${brood.ingrediënten || "-"}</p>
+        <p><strong>Allergenen:</strong> ${brood.allergenen || "-"}</p>
+      </div>
       <p class="prijs"><strong>Prijs:</strong> €${
         brood.prijs ? brood.prijs.toFixed(2) : "-"
       }</p>
     </div>
-  `
-    )
+  `;
+    })
     .join("");
 }
 
 function filterOpCategorie(categorieId) {
   if (categorieId === "all") {
-    renderProducten(alleProducten);
-  } else {
-    renderProducten(
-      alleProducten.filter((p) => String(p.categorieid) === String(categorieId))
+    // Sorteer alle producten op naam
+    const gesorteerdeProducten = [...alleProducten].sort((a, b) =>
+      a.naam.localeCompare(b.naam, "nl")
     );
+    renderProducten(gesorteerdeProducten);
+  } else {
+    // Filter en sorteer de gefilterde producten op naam
+    const gefilterd = alleProducten
+      .filter((p) => String(p.categorieid) === String(categorieId))
+      .sort((a, b) => a.naam.localeCompare(b.naam, "nl"));
+    renderProducten(gefilterd);
   }
 }
 
