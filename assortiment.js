@@ -85,10 +85,53 @@ function renderProducten(producten) {
       <p class="prijs"><strong>Prijs:</strong> €${
         brood.prijs ? brood.prijs.toFixed(2) : "-"
       }</p>
+      <div class="product-actions">
+        <button class="meer-info-btn" data-product='${JSON.stringify(brood)}'>
+          Meer informatie
+        </button>
+        <p class="prijs mobile-only"><strong>Prijs:</strong> €${
+          brood.prijs ? brood.prijs.toFixed(2) : "-"
+        }</p>
+      </div>
     </div>
   `;
     })
     .join("");
+
+  // Popup functionaliteit toevoegen
+  const popup = document.getElementById("product-popup");
+  const popupHeader = popup.querySelector(".popup-header h3");
+  const popupBody = popup.querySelector(".popup-body");
+  const closeButton = popup.querySelector(".popup-close");
+
+  // Sluit popup bij klikken op sluitknop
+  closeButton.addEventListener("click", () => {
+    popup.style.display = "none";
+    document.body.style.overflow = "auto";
+  });
+
+  // Sluit popup bij klikken buiten de popup
+  popup.addEventListener("click", (e) => {
+    if (e.target === popup) {
+      popup.style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+  });
+
+  // Voeg click handlers toe aan alle "Meer informatie" knoppen
+  document.querySelectorAll(".meer-info-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const product = JSON.parse(btn.dataset.product);
+      popupHeader.textContent = product.naam;
+      popupBody.innerHTML = `
+        <p>${product.beschrijving || ""}</p>
+        <p><strong>Ingrediënten:</strong> ${product.ingrediënten || "-"}</p>
+        <p><strong>Allergenen:</strong> ${product.allergenen || "-"}</p>
+      `;
+      popup.style.display = "block";
+      document.body.style.overflow = "hidden";
+    });
+  });
 }
 
 function filterOpCategorie(categorieId) {
@@ -142,4 +185,33 @@ document.addEventListener("DOMContentLoaded", () => {
       navMenu.classList.remove("show");
     }
   });
+
+  // Scroll to top functionaliteit
+  const scrollButton = document.querySelector(".scroll-to-top");
+
+  function checkScrollPosition() {
+    const shouldBeVisible = window.scrollY > 500;
+
+    if (shouldBeVisible) {
+      scrollButton.classList.add("visible");
+    } else {
+      scrollButton.classList.remove("visible");
+    }
+  }
+
+  // Voeg scroll event listener toe
+  window.addEventListener("scroll", () => {
+    checkScrollPosition();
+  });
+
+  // Scroll to top wanneer op de knop wordt geklikt
+  scrollButton.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+
+  // Check initiële scroll positie
+  checkScrollPosition();
 });
