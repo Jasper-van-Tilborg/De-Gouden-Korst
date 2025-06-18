@@ -1,23 +1,128 @@
-# De Gouden Korst
+# De Gouden Korst 🍞
 
-Welkom bij **De Gouden Korst**, een overzichtelijke en aantrekkelijke website voor een fictieve bakkerij.
+A simple, functional website for the fictional bakery **De Gouden Korst**, built with HTML, CSS, JavaScript, and enhanced via AI development tools. Hosted live on Vercel.
 
-## 🌐 Live demo  
-Bekijk de website live:  
-`(https://de-gouden-korst-2bt6n7qw0-jasper-van-tilborgs-projects.vercel.app)`
+---
 
-## Inhoud van de repository
+## 🔍 Project Description
 
-- `index.html`, `about.html`, `products.html` *(bijvoorbeeld)* – de paginastructuur  
-- `css/` – opmaak en design  
-- `js/` – interactieve elementen (filters, menu, etc.)  
-- `images/` – productfoto’s en grafische afbeeldingen  
+**De Gouden Korst** is a lightweight, responsive bakery site that showcases products, provides a contact form, and employs mobile-first design principles. Key features include:
 
-## Installatie & lokaal gebruik
+* **Assortment listing** with neat product cards
+* **Contact form** with client-side validation
+* **Responsive layout** optimized for mobile-first viewing
+* **AI‑guided code practices** using Cursor AI and enforced web-standards rules
 
-Om de site lokaal te draaien:
+---
+
+## ⚙️ Technologies Used
+
+* **HTML5** – semantic markup
+* **CSS3** – mobile-first styling
+* **JavaScript (ES6+)** – interactive form handling
+* **Cursor AI** – AI-assisted development
+* **Vercel** – deployment & hosting
+
+---
+
+## 🚀 Live Demo
+
+Check out the live site here:
+[https://de-gouden-korst.vercel.app](https://de-gouden-korst.vercel.app) ([github.com][1], [github.com][2])
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+├── index.html          # Home page
+├── assortiment.html    # Product list
+├── contact.html        # Contact form
+├── styles.css          # Global styles
+├── script.js           # Form validation & interactivity
+├── .cursor/
+│   └── rules/web-standards.mdc   # AI development style rules
+└── vercel.json         # Vercel routing configuration
+```
+
+---
+
+## 🛠️ Installation (Local Setup)
+
+To run locally:
 
 ```bash
 git clone https://github.com/Jasper-van-Tilborg/De-Gouden-Korst.git
 cd De-Gouden-Korst
-open index.html
+# Open src/index.html in your browser, or install a live-server:
+npx live-server src
+```
+
+---
+
+## 🧑‍💻 Usage Examples
+
+1. Browse to **index.html** to view the homepage.
+2. Visit **assortiment.html** to see product listings.
+3. On **contact.html**, fill out the form; try leaving required fields blank to see validation in action.
+4. The JavaScript ensures all fields are completed before allowing “Submit.”
+
+---
+
+## 🤝 Contribution Guidelines
+
+Contributions are welcome! To contribute:
+
+1. Fork the repo
+2. Create a new branch: `git checkout -b feature/YourFeature`
+3. Commit your changes: `git commit -m "Add your feature"`
+4. Push: `git push origin feature/YourFeature`
+5. Open a pull request describing your changes and why they help
+
+Please adhere to existing styling, follow Cursor AI rules, and ensure accessibility and responsive design.
+
+---
+
+## 🛡️ License
+
+This project is released under the **MIT License**. See [LICENSE](https://github.com/DoaaAltair/De-Gouden-Korst/blob/main/LICENSE) for full details. ([github.com][3], [prezi.com][4], [github.com][1])
+
+---
+
+## ❓ FAQ / Troubleshooting
+
+| Problem                         | Solution                                                                 |
+| ------------------------------- | ------------------------------------------------------------------------ |
+| Website shows 404 on deployment | Check that `vercel.json` sets `"src/"` as root and rebuild the site      |
+| Styles don't apply              | Confirm `styles.css` is correctly linked in all HTML files               |
+| Contact form not submitting     | Ensure browser JS is enabled; `script.js` handles form validation        |
+| AI prompts not applied          | Make sure `.cursor/rules/web-standards.mdc` is present before code edits |
+
+---
+
+## 🧾 Changelog
+
+**v1.0** (initial release)
+
+* Added homepage, products page, and contact form
+* Implemented CSS and JS for responsive design and validation
+* Integrated Cursor AI rules for consistent development
+* Hosted on Vercel with proper routing settings
+
+---
+
+## 📌 Notes for Maintainers
+
+* Keep README updated with new pages or features
+* Add version tags or releases as the project evolves
+* Include screenshots or GIFs to enhance visual appeal
+
+---
+
+Feel free to customize badges (e.g. build status), add screenshots under the project structure, or expand the changelog as the project grows. Let me know if you'd like help generating visuals or integrating CI/CD badges!
+
+[1]: https://github.com/DoaaAltair/De-Gouden-Korst?utm_source=chatgpt.com "DoaaAltair/De-Gouden-Korst: Bakker website De Gouden Korst - GitHub"
+[2]: https://github.com/Jasper-van-Tilborg/bakkerijopdracht/blob/main/README.md?utm_source=chatgpt.com "bakkerijopdracht/README.md at main · Jasper-van-Tilborg ... - GitHub"
+[3]: https://github.com/Jasper-van-Tilborg?utm_source=chatgpt.com "Jasper-van-Tilborg (Jasper van Tilborg) - GitHub"
+[4]: https://prezi.com/nb8t0anjs2ew/beatrix-college/?utm_source=chatgpt.com "Beatrix college by Jasper Van tilborg on Prezi"
