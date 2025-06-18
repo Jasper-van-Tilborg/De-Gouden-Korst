@@ -28,7 +28,7 @@ A simple, functional website for the fictional bakery **De Gouden Korst**, b
 ## 🚀 Live Demo
 
 Check out the live site here:
-[https://de-gouden-korst.vercel.app](https://de-gouden-korst.vercel.app) ([github.com][1], [github.com][2])
+[https://de-gouden-korst.vercel.app]((https://de-gouden-korst-three.vercel.app))
 
 ---
 
@@ -86,8 +86,7 @@ Please adhere to existing styling, follow Cursor AI rules, and ensure accessibil
 
 ## 🛡️ License
 
-This project is released under the **MIT License**. See [LICENSE](https://github.com/DoaaAltair/De-Gouden-Korst/blob/main/LICENSE) for full details. ([github.com][3], [prezi.com][4], [github.com][1])
-
+This project is released under the **MIT License**. See [LICENSE](https://github.com/DoaaAltair/De-Gouden-Korst/blob/main/LICENSE) for full details.
 ---
 
 ## ❓ FAQ / Troubleshooting
@@ -119,10 +118,3 @@ This project is released under the **MIT License**. See [LICENSE](https://github
 * Include screenshots or GIFs to enhance visual appeal
 
 ---
-
-Feel free to customize badges (e.g. build status), add screenshots under the project structure, or expand the changelog as the project grows. Let me know if you'd like help generating visuals or integrating CI/CD badges!
-
-[1]: https://github.com/DoaaAltair/De-Gouden-Korst?utm_source=chatgpt.com "DoaaAltair/De-Gouden-Korst: Bakker website De Gouden Korst - GitHub"
-[2]: https://github.com/Jasper-van-Tilborg/bakkerijopdracht/blob/main/README.md?utm_source=chatgpt.com "bakkerijopdracht/README.md at main · Jasper-van-Tilborg ... - GitHub"
-[3]: https://github.com/Jasper-van-Tilborg?utm_source=chatgpt.com "Jasper-van-Tilborg (Jasper van Tilborg) - GitHub"
-[4]: https://prezi.com/nb8t0anjs2ew/beatrix-college/?utm_source=chatgpt.com "Beatrix college by Jasper Van tilborg on Prezi"
