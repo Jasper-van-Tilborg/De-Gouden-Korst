@@ -28,7 +28,7 @@ A simple, functional website for the fictional bakery **De Gouden Korst**, b
 ## 🚀 Live Demo
 
 Check out the live site here:
-[](https://de-gouden-korst-three.vercel.app))
+https://de-gouden-korst-three.vercel.app
 
 ---
 
